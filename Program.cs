@@ -16,3 +16,26 @@ for (int i = 0; i < numberOfRecords; i++)
 }
 
 // Print out the list of records using Console.WriteLine()
+
+Console.WriteLine("How many records do you want to add? ");
+var numberOfRecords = int.Parse(Console.ReadLine());
+
+var recordList = new List<DerivedClass>();
+for (int i = 0; i < numberOfRecords; i++)
+{
+    var derivedClass = new DerivedClass();
+
+    Console.WriteLine("Enter the value for BaseProperty: ");
+    derivedClass.BaseProperty = Console.ReadLine();
+
+    Console.WriteLine("Enter the value for DerivedProperty: ");
+    derivedClass.DerivedProperty = Console.ReadLine();
+
+    recordList.Add(derivedClass);
+}
+
+// Print out the list of records using Console.WriteLine()
+foreach (var record in recordList)
+{
+    Console.WriteLine(record);
+}
